@@ -1,1 +1,1 @@
-# sds_django_api_mongo
+# sds_django_api
