@@ -13,8 +13,7 @@ class SinQuote(models.Model):
     )
 
     sin = models.CharField(max_length=8, choices=SINS)
-    quote = models.TextField()
-    date_created = models.DateTimeField(datetime.now())
+    quote = models.TextField(unique=True, null=False)
     
     def __str__(self):
-        return '{} quote created {}'.format(self.sin.capitalize(), self.date_created)
+        return '{} quote'.format(self.sin.capitalize())
