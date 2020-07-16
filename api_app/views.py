@@ -1,14 +1,8 @@
-from rest_framework import generics
+from rest_framework import generics, viewsets
 from .models import SinQuote
 from .serializers import SinQuoteSerializer
 
 
-class ListSinQuote(generics.ListCreateAPIView):
+class SinQuoteViewSet(viewsets.ModelViewSet):
     queryset = SinQuote.objects.all()
     serializer_class = SinQuoteSerializer
-
-
-class DetailSinQuote(generics.RetrieveUpdateDestroyAPIView):
-    queryset = SinQuote.objects.all()
-    serializer_class = SinQuoteSerializer
-    
